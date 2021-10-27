@@ -24,5 +24,7 @@ Ansible code to deploy Docker image on ECS
 
 **How to Deploy:**
 - Run the below command to Deploy your docker container to ECS using ansible
+
        ansible-playbook ansible-ecs-deploy-playbook.yml --extra-vars "aws_keypair= $keypair_value"
+       
 - Test the application using the load balancer URL.
