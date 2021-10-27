@@ -1,0 +1,11 @@
+# Deploy docker image into AWS ECS
+
+- name: create vpc
+  hosts: localhost
+  roles:
+   - vpc_create
+
+- name: create ecs cluster
+  hosts: localhost
+  roles:
+   - ecs_cluster
