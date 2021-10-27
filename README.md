@@ -3,11 +3,16 @@ Ansible code to deploy Docker image on ECS
 
 **Pre-requisites:**
 - EC2 instance(test account) with Ansible installed 
+    
     Commands:
-        - yum install pip
-        - pip install ansible
-        - pip install boto
-        - pip install botocore
+        
+		- yum install pip
+        
+		- pip install ansible
+        
+		- pip install boto
+        
+		- pip install botocore
 
 - Create an EC2 key_pair in AWS and pass it as a parameter to ansible-playbook
 
