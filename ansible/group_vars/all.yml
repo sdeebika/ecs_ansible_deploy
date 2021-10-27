@@ -1,9 +1,6 @@
 # Run ansible locally
 ansible_connection: local
 
-# Your aws keypair name 
-aws_keypair: helloworld_keypair
-
 # Region to create the vpc and subnets
 aws_region: us-west-2
 

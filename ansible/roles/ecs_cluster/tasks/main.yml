@@ -81,7 +81,7 @@
     - name: "{{ imagename }}"
       cpu: 10
       essential: true
-      image: "pvermeyden/nodejs-hello-world"
+      image: "pvermeyden/nodejs-hello-world:a1e8cf1edcc04e6d905078aed9861807f6da0da4"
       environment:
         - name: "HELLO"
           value: "world"
