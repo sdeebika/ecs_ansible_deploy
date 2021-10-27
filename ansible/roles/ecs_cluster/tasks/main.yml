@@ -1,6 +1,7 @@
 # Cluster creation
 - ecs_cluster:
     name: "{{ new_cluster }}"
+    region: "{{ aws_region }}"
     state: present
   register: create_cluster
 
@@ -17,6 +18,7 @@
 - name: Create target group
   elb_target_group:
     name: "{{ imagename }}"
+    region: "{{ aws_region }}"
     protocol: http
     port: 80
     vpc_id: "{{ create_vpc.vpc.id }}"
@@ -29,6 +31,7 @@
 - name: Create elb
   elb_application_lb:
     name: "{{ imagename }}"
+    region: "{{ aws_region }}"
     security_groups:
       - "{{imagename}}_elb_security_group"
     subnets:
@@ -65,6 +68,7 @@
 - name: Wait for ec2 insante register into ecs cluster
   ecs_cluster:
     name: "{{ new_cluster }}"
+    region: "{{ aws_region }}"
     state: has_instances
     delay: 10
     repeat: 20
@@ -72,6 +76,7 @@
 # Task definition creation
 - name: Create task definition
   ecs_taskdefinition:
+    region: "{{ aws_region }}"
     containers:
     - name: "{{ imagename }}"
       cpu: 10
@@ -92,6 +97,7 @@
 # Service Creation
 - name: Create ecs service
   ecs_service:
+    region: "{{ aws_region }}"
     name: "{{ imagename }}_service"
     state: present
     cluster: "{{ new_cluster }}"

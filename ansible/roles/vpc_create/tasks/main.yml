@@ -10,6 +10,7 @@
   ec2_vpc_subnet:
     state: present
     vpc_id: "{{ create_vpc.vpc.id }}"
+    region: "{{ aws_region }}"
     cidr: 10.0.1.0/24
     resource_tags:
       Name: ECS Subnet1
@@ -20,6 +21,7 @@
   ec2_vpc_subnet:
     state: present
     vpc_id: "{{ create_vpc.vpc.id }}"
+    region: "{{ aws_region }}"
     cidr: 10.0.2.0/24
     resource_tags:
       Name: ECS Subnet1
